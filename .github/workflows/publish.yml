@@ -52,8 +52,8 @@ jobs:
           tags: |
             # Only version, no revision
             type=match,pattern=v(.*)-(.*),group=1
-            # branch
-            type=ref,event=branch
+            # branch (main)
+            type=raw,value=main,enable=${{ github.ref_name == 'main' }}
             # semver
             type=semver,pattern={{version}}
       - name: push
