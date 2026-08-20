@@ -8,7 +8,7 @@ RUN echo "Building Amaru..." \
     && cd amaru \
     && cargo build --release
 
-FROM ghcr.io/blinklabs-io/cardano-configs:20260623-1 AS cardano-configs
+FROM ghcr.io/blinklabs-io/cardano-configs:20260707-2 AS cardano-configs
 
 FROM debian:bookworm-slim AS amaru
 COPY --from=rustbuilder /code/amaru/data/ /data/
